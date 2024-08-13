@@ -1,0 +1,29 @@
+body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.todo-header {
+    background-color: rgb(73, 73, 73);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+
+}
+
+.todo-name {
+    font-size: 25px;
+    
+}
+
+.checkall-icon {
+    content: url('./checkall.svg'); 
+    height: 30px;
+    color: white;
+
+}
