@@ -26,5 +26,4 @@ function taskMethodInit(task){
     setTaskChecklist, setTaskDueDate }
 }
  
- 
 export { taskMethodInit };

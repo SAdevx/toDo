@@ -1,3 +1,7 @@
+import { sidebarUI } from "./sidebarUI";
+import { projectDialog } from "./projectDialog";
+import { taskDialog } from "./taskDialog";
+
 function TODOUI(){
     const body = document.querySelector('body');
     const todoHeader = document.createElement('div');
@@ -14,6 +18,8 @@ function TODOUI(){
     todoHeader.appendChild(checkAllIcon);
 
     body.appendChild(todoHeader);
+    body.appendChild(projectDialog());
+    body.appendChild(taskDialog());
 }
 
 export { TODOUI }

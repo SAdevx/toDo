@@ -3,6 +3,9 @@ body {
     box-sizing: border-box;
     margin: 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 .todo-header {
@@ -11,19 +14,89 @@ body {
     font-weight: bold;
     display: flex;
     justify-content: center;
-    height: 50px;
+    height: 55px;
     align-items: center;
+    gap: 5px;
 
 }
 
 .todo-name {
-    font-size: 25px;
-    
+    font-size: 30px;
 }
 
 .checkall-icon {
     content: url('./checkall.svg'); 
-    height: 30px;
-    color: white;
+    height: 40px;
+}
 
+.main-content {
+    display: flex;
+    height: 100px;
+    flex: 1;
+}
+
+.side-bar {
+    background-color: rgb(144, 144, 144);
+    width: 260px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.side-bar span:hover {
+    cursor: pointer;
+    background-color: rgb(158, 158, 158);
+}
+
+.todo-content {
+    background-color: rgb(235, 235, 235);
+    width: 1200px;
+    flex: 4;
+}
+
+.today, 
+.week,
+.project {
+    border-radius: 3px;
+    padding-left: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.project {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.plus {
+    content: url('./plus.svg');
+    height: 30px;
+}
+
+.project-dialog {
+    position: absolute;
+    top: 40%;
+
+}
+.project-dialog > form {
+    width: 250px;
+    display: flex;
+}
+
+.project-subsection {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-container {
+    padding-left: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
