@@ -6,7 +6,8 @@ function sideBarUI(){
     const week = document.createElement('span');
     const project = document.createElement('span');
     const projectAddIcon = document.createElement('span');
-    const projectSubsection = document.createElement('span');
+    const projectSubsection = document.createElement('div');
+    const taskPage = document.createElement('div');
 
     today.textContent = "Today"; 
     week.textContent = "Week";
@@ -15,15 +16,18 @@ function sideBarUI(){
     projectAddIcon.classList.add('plus');
     project.classList.add('project');
     project.appendChild(projectAddIcon);
+    projectSubsection.classList.add('project-subsection');
 
     sidebar.appendChild(today);
     sidebar.appendChild(week);
     sidebar.appendChild(project);
     sidebar.appendChild(projectSubsection);
 
-    sidebar.classList.add('side-bar');
+    taskPage.classList.add('task-page');
 
+    sidebar.classList.add('side-bar');
     mainContent.appendChild(sidebar);
+    mainContent.appendChild(taskPage);
 }
 
 export { sideBarUI };
