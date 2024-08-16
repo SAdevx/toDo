@@ -1,8 +1,6 @@
 import "../assets/styles.css";
 import { TODOUI } from "./todoUI";
-import { mainContent } from "./mainContent";
-import { addProjects } from "./addProjects";
+import { sideBarUI } from "./sidebarUI";
 
 TODOUI();
-mainContent();
-addProjects();
+sideBarUI();

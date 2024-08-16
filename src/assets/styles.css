@@ -4,11 +4,80 @@ body {
     margin: 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    flex-direction: column;
     align-content: center;
+    flex-direction: column;
 }
 
-.todo-header {
+dialog {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 5px rgb(152, 152, 152);
+    position: absolute;
+    top: 40%;
+}
+
+
+.add-project-dialog,
+.cancel-project-dialog {
+    font-weight: bold;
+    width: 80px;
+    border: none;
+    border-radius: 2px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.cancel-project-dialog {
+    background-color: rgb(39, 165, 39);
+    color: black;
+}
+
+.add-project-dialog {
+    background-color: red;
+    color: white;
+}
+
+.task-description {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 200px;
+}
+
+.task-add {
+
+}
+
+.task-cancel {
+
+}
+
+.task-dialog {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 5px rgb(152, 152, 152);
+    position: absolute;
+    top: 35%;
+    
+}
+
+.task-dialog > form {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.task-nameinput  {
+    width: 300px;
+}
+
+.date-priority {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
     background-color: rgb(73, 73, 73);
     color: white;
     font-weight: bold;
@@ -17,86 +86,41 @@ body {
     height: 55px;
     align-items: center;
     gap: 5px;
-
-}
-
-.todo-name {
     font-size: 30px;
 }
 
-.checkall-icon {
-    content: url('./checkall.svg'); 
+header > span {
+    content: url('./checkall.svg');
     height: 40px;
 }
 
 .main-content {
     display: flex;
-    height: 100px;
+    align-content: stretch;
     flex: 1;
 }
 
 .side-bar {
     background-color: rgb(144, 144, 144);
     width: 260px;
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
     font-weight: bold;
     font-size: 20px;
-}
-
-.side-bar span:hover {
-    cursor: pointer;
-    background-color: rgb(158, 158, 158);
-}
-
-.todo-content {
-    background-color: rgb(235, 235, 235);
-    width: 1200px;
-    flex: 4;
-}
-
-.today, 
-.week,
-.project {
-    border-radius: 3px;
-    padding-left: 5px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-}
-
-.project {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+    
 }
 
 .plus {
     content: url('./plus.svg');
-    height: 30px;
+   height: 30px;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
 }
 
-.project-dialog {
-    position: absolute;
-    top: 40%;
-
-}
-.project-dialog > form {
-    width: 250px;
-    display: flex;
-}
-
-.project-subsection {
-    display: flex;
-    flex-direction: column;
-}
-
-.project-container {
-    padding-left: 30px;
-    height: 30px;
+.project {
     display: flex;
     align-items: center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    justify-content: space-between;
 }

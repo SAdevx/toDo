@@ -1,27 +1,29 @@
-function sidebarUI(){
-    const sidebar = document.querySelector('.side-bar');
+function sideBarUI(){
+    const mainContent = document.querySelector('.main-content');
+    console.log(mainContent)
+    const sidebar = document.createElement('div');
     const today = document.createElement('span');
     const week = document.createElement('span');
     const project = document.createElement('span');
-    const plus = document.createElement('span');
-    const projectSubsection = document.createElement('div');
+    const projectAddIcon = document.createElement('span');
+    const projectSubsection = document.createElement('span');
 
-    today.textContent = 'Today';
-    week.textContent = 'Week';
-    project.textContent = 'Project';
+    today.textContent = "Today"; 
+    week.textContent = "Week";
+    project.textContent = "Project";
 
-    today.classList.add('today');
-    week.classList.add('week');
+    projectAddIcon.classList.add('plus');
     project.classList.add('project');
-    plus.classList.add('plus');
-    projectSubsection.classList.add('project-subsection');
-
-    project.appendChild(plus);
+    project.appendChild(projectAddIcon);
 
     sidebar.appendChild(today);
     sidebar.appendChild(week);
     sidebar.appendChild(project);
     sidebar.appendChild(projectSubsection);
+
+    sidebar.classList.add('side-bar');
+
+    mainContent.appendChild(sidebar);
 }
 
-export { sidebarUI };
+export { sideBarUI };

@@ -1,25 +1,22 @@
-import { sidebarUI } from "./sidebarUI";
 import { projectDialog } from "./projectDialog";
 import { taskDialog } from "./taskDialog";
 
 function TODOUI(){
     const body = document.querySelector('body');
-    const todoHeader = document.createElement('div');
-    const todoName = document.createElement('span');
-    const checkAllIcon = document.createElement('span');
+    const header = document.createElement('header');
+    const checkIcon = document.createElement('span'); 
+    const mainContent = document.createElement('div');
 
-    todoName.textContent = "TODO";
+    header.textContent = "TODO";
+    mainContent.classList.add('main-content');
 
-    todoHeader.classList.add('todo-header');
-    checkAllIcon.classList.add('checkall-icon');
-    todoName.classList.add('todo-name');
 
-    todoHeader.appendChild(todoName);
-    todoHeader.appendChild(checkAllIcon);
-
-    body.appendChild(todoHeader);
+    header.appendChild(checkIcon)
+    body.appendChild(header);
+    body.appendChild(mainContent);
     body.appendChild(projectDialog());
     body.appendChild(taskDialog());
+
 }
 
 export { TODOUI }
