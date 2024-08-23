@@ -1,6 +1,20 @@
 import "../assets/styles.css";
 import { TODOUI } from "./todoUI";
-import { sideBarUI } from "./sidebarUI";
+import { sideBarUI } from "./sideBarUI";
+import addProject from "./addProject";
+import { loadProjectTask } from "./loadProjectsTask";
+import { addTask } from "./addTask";
+import { deleteProject } from "./deleteProject";
+import { deleteTasks } from "./deleteTask";
+import { getTodayTasks } from "./today";
+import { getWeeklyTodos } from "./week";
 
 TODOUI();
 sideBarUI();
+addProject();
+loadProjectTask();
+addTask();
+deleteProject();
+deleteTasks();
+getTodayTasks();
+getWeeklyTodos();

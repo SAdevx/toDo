@@ -9,11 +9,12 @@ function ProjectMethodInit(){
     });
  
     const setProjectTitle = (title) => projectTitle = title;
-    const setProjectTasks = (task)  => projectTasks.push(task);
-    const addTasks     = (tasks) => projectTasks = tasks;
+    const setProjectTasks = (task)  => projectTasks = [...task];
+    const addTasks     = (tasks) => projectTasks.push(tasks);
+    const deleteProject = (index, num) => projectTasks.splice(index, num)
    
     return { getProjectTitle, getProjectTasks, setProjectTitle, setProjectTasks,
-        getProjectInfo, addTasks
+        getProjectInfo, addTasks, deleteProject
     }
 }
 

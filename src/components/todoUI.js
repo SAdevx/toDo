@@ -10,7 +10,6 @@ function TODOUI(){
     header.textContent = "TODO";
     mainContent.classList.add('main-content');
 
-
     header.appendChild(checkIcon)
     body.appendChild(header);
     body.appendChild(mainContent);

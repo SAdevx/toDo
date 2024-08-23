@@ -16,7 +16,6 @@ dialog {
     top: 40%;
 }
 
-
 .add-project-dialog,
 .cancel-project-dialog {
     font-weight: bold;
@@ -41,6 +40,7 @@ dialog {
     min-width: 300px;
     max-width: 300px;
     min-height: 200px;
+    max-height: 300px;
 }
 
 .task-add {
@@ -61,11 +61,9 @@ dialog {
 }
 
 .task-dialog > form {
-
     display: flex;
     align-items: center;
     flex-direction: column;
-
 }
 
 .task-nameinput  {
@@ -108,19 +106,110 @@ header > span {
     gap: 20px;
     font-weight: bold;
     font-size: 20px;
-    
 }
+
+.side-bar span:hover {
+    background-color: rgb(158, 158, 158);
+ }
+ 
 
 .plus {
     content: url('./plus.svg');
-   height: 30px;
-   display: flex;
-   align-items: center;
-   cursor: pointer;
 }
 
-.project {
+.project ,
+.project-title{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.delete-project,
+.delete-task {
+    content: url("./close.svg");  
+}
+
+.plus,
+.delete-project {
+    height: 30px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.delete-task {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.task-plus {
+    content: url('./plus.svg');
+    height: 45px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.task-page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: rgb(235, 235, 235);
+}
+
+.project-header,
+.today-page,
+.week-page {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.task-container {
+    background-color: rgb(144, 144, 144);
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    height: 25px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.low {
+    border-left: green solid 10px;
+}
+
+.medium {
+    border-left: rgb(172, 172, 17) solid 10px;   
+}
+
+.high {
+    border-left: rgb(161, 39, 39) solid 10px;
+}
+
+.task-subsection
+.today-subsection {
+    padding: 20px;
+}
+
+.task-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.task-info > button {
+    height: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.today {
+    cursor: pointer;
 }

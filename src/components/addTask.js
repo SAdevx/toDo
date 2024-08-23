@@ -56,7 +56,7 @@ function addTask(){
                     }
                 }
 
-                currentTask.setTitle( taskName.value.trim());
+                currentTask.setTitle(taskName.value.trim());
                 currentTask.setDueDate(taskDate.value.trim());
                 currentTask.setDescription(taskDescripton.value.trim());
                 currentTask.setPriority(taskPriority.options[taskPriority.selectedIndex].text);
@@ -93,7 +93,6 @@ function addTask(){
                 taskName.value = '';
                 taskDescripton.value = ''
                 taskDialog.close();
-
             }
         }
     });

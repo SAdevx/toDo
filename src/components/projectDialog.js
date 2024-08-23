@@ -6,6 +6,7 @@ function projectDialog(){
     const cancelBtn = document.createElement('button');
 
     projectNameInput.placeholder = 'Name';
+    projectNameInput.classList.add('project-input');
 
     addBtn.classList.add('add-project-dialog');
     cancelBtn.classList.add('cancel-project-dialog');
@@ -17,9 +18,10 @@ function projectDialog(){
     form.appendChild(addBtn);
     form.appendChild(cancelBtn);
 
+    dialog.classList.add('project-dialog');
     dialog.appendChild(form);
 
-    return dialog
+    return dialog;
 }
 
 export { projectDialog };

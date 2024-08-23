@@ -11,7 +11,6 @@ function deleteProject(){
                     break;
                 }
             }
-
             if(projectIndex >= 0) localStorageArr.splice(projectIndex, 1);
 
             localStorage.setItem("todo", JSON.stringify(localStorageArr));

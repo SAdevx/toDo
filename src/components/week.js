@@ -1,33 +1,37 @@
-function getTodayTasks(){
+function getWeeklyTodos(){
     document.addEventListener('click', (e) => {
-        if(e.target.className === 'today'){
+        if(e.target.className === 'week'){
             const day = new Date().getDate();
             const month = new Date().getMonth() + 1;
             const year = new Date().getFullYear();
-    
-            const todayPageSubsection = document.createElement('div');
-            const todayContentPage = document.querySelector('.task-page');
-            const todayHeader = document.createElement('div');
+
+            const firstDayOfWeek = day - (new Date().getDay());
+            const lastDayOfWeek = firstDayOfWeek + 6;
+
+            const weekPageSubsection = document.createElement('div');
+            const weekHeader = document.createElement('div');
+
+            const weekContentPage = document.querySelector('.task-page');
             const localStorageArr = JSON.parse(localStorage.getItem("todo"));
 
-            todayHeader.textContent = "Today";
-            todayHeader.classList.add('today-page');
-            todayPageSubsection.classList.add('today-subsection');
+            weekHeader.textContent = "Week";
+            weekHeader.classList.add('week-page');
+            weekPageSubsection.classList.add('week-subsection');
     
-            while(todayContentPage.firstChild){
-                todayContentPage.removeChild(todayContentPage.firstChild);
+            while(weekContentPage.firstChild){
+                weekContentPage.removeChild(weekContentPage.firstChild);
             }
 
-            todayContentPage.appendChild(todayHeader);
-            todayContentPage.appendChild(todayPageSubsection);
+            weekContentPage.appendChild(weekHeader);
+            weekContentPage.appendChild(weekPageSubsection);
 
             if(localStorageArr){
                 for(let i = 0; i < localStorageArr.length; i++){
                     const project = localStorageArr[i].projectTasks;
                     for(let j = 0; j < project.length; j++){
                         let currTaskDate = project[j].dueDate.split('-');
-                        if(currTaskDate[0] == year && currTaskDate[1] == '0'+month &&
-                            currTaskDate[2] == day){
+                        if(currTaskDate[0] == year && currTaskDate[1] == month &&
+                            currTaskDate[2] >= firstDayOfWeek && currTaskDate[2] <= lastDayOfWeek){
                                 const taskContainer = document.createElement('div');
                                 const taskTitle = document.createElement('span');
                                 const taskDueDate = document.createElement('span');
@@ -36,7 +40,6 @@ function getTodayTasks(){
 
                                 taskTitle.textContent = project[j].title;
                                 taskDueDate.textContent = project[j].dueDate;
-
                                 taskDetails.textContent = 'Details';
                 
                                 taskContainer.classList.add('task-container');
@@ -54,13 +57,13 @@ function getTodayTasks(){
                                 } else {
                                     taskContainer.classList.add('high');
                                 }
-                                todayPageSubsection.appendChild(taskContainer);
-                            }
+                                weekPageSubsection.appendChild(taskContainer);
+                        }
                     }
                 }
             }
         }
     });
-}
+};
 
-export { getTodayTasks };
+export { getWeeklyTodos };
